@@ -1,10 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./react/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ['./react/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }

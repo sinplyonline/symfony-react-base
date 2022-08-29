@@ -27,7 +27,14 @@ class Answer
      * @ORM\Column(name="answerText", type="string", length=255)
      */
     private $answerText;
-
+    
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="correctAnswer", type="boolean")
+     */
+    private $correctAnswer;
+    
     /**
      * @var Question
      *
@@ -46,7 +53,7 @@ class Answer
     }
 
     /**
-     * Set content.
+     * Set answerText
      *
      * @param string $answerText
      *
@@ -60,13 +67,36 @@ class Answer
     }
 
     /**
-     * Get content.
+     * Get answerText.
      *
      * @return string
      */
     public function getAnswerText()
     {
         return $this->answerText;
+    }
+
+    /**
+     * Set correctAnswer
+     *
+     * @param string $correctAnswer
+     *
+     */
+    public function setCorrectAnswer($correctAnswer)
+    {
+        $this->correctAnswer = $correctAnswer;
+
+        return $this;
+    }
+
+    /**
+     * Get correctAnswer.
+     *
+     * @return boolean
+     */
+    public function getCorrectAnswer()
+    {
+        return $this->correctAnswer;
     }
 
     /**
@@ -91,9 +121,7 @@ class Answer
     {
         return $this->question;
     }
+    
 
-    public function __toString()
-    {
-        return $this->answerText;
-    }
+    
 }

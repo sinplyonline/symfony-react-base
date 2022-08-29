@@ -31,7 +31,8 @@ class AnswerController extends AbstractController
                 $data[] = [
                     'id' => $answer->getId(),
                     'text' => $answer->getAnswerText(),
-                    'question'=> $answer->getQuestion()
+                    'question'=> $answer->getQuestion(),
+                    'correct'=> $answer->getCorrectAnswer()
                 ];
             }
         

@@ -1,15 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from './Layout';
-import "../app.css";
-import Questions from './Questions';
+import React, { useState, useEffect } from 'react'
+import Layout from './Layout'
+import '../app.css'
+import Questions from './Questions'
+import Results from './Results'
+
 function Main() {
-    return (
-        <Layout>
-          <Questions/>
-        </Layout>
-    );
+  const [quiz, setQuiz] = useState(false)
+  const startQuiz = () => {
+    setQuiz(true)
+  }
+  return <Layout>{quiz ? <Questions /> : <Results startQuiz={startQuiz} />}</Layout>
 }
-   
-export default Main;
+
+export default Main

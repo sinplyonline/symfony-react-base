@@ -25,7 +25,12 @@ class Result
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $percentage;
+    private $score;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $email;
 
     public function getId(): ?int
     {
@@ -43,15 +48,26 @@ class Result
 
         return $this;
     }
-
-    public function getPercentage(): ?string
+    public function getEmail(): ?string
     {
-        return $this->percentage;
+        return $this->email;
     }
 
-    public function setPercentage(string $percentage): self
+    public function setEmail(string $email): self
     {
-        $this->percentage = $percentage;
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getScore(): ?string
+    {
+        return $this->score;
+    }
+
+    public function setScore(string $score): self
+    {
+        $this->score = $score;
 
         return $this;
     }
