@@ -19,7 +19,7 @@ function Results({ startQuiz }) {
   }
 
   return (
-    <div className="p-5 text-gray-900 bg-white">
+    <div className="p-6 text-gray-900 bg-white shadow rounded">
       <div className="pb-10 flex justify-between">
         <h2 className="text-xl font-semi-bold ">Inzendingen quiz</h2>
         <button
@@ -31,22 +31,23 @@ function Results({ startQuiz }) {
           Start quiz
         </button>
       </div>
-      <table className="bg-white w-full rounded-lg p-5 shadow">
-        <thead>
-          <tr className="w-full text-gray-400 h-8 text-justify uppercase text-sm bg-gray-100 text-sm py-4">
-            <th className="w-2/4 pl-5 font-normal ">Name</th>
-            <th className="w-2/4 pl-5 font-normal">Score</th>
+      <table className="bg-white w-full rounded shadow border-separate border-spacing-0 border border-gray-200">
+        <thead className="">
+          <tr className="w-full text-gray-500  text-justify uppercase text-xs bg-gray-50 text-sm ">
+            <th className="w-2/4 pl-5 font-normal  rounded-tl  border-gray-200 py-4">
+              Name
+            </th>
+            <th className="w-2/4 pl-5 font-normal rounded-tr border-gray-200 py-4">
+              Score
+            </th>
           </tr>
         </thead>
         <tbody>
           {results.map((result, index) => {
             return (
-              <tr
-                key={index}
-                className="border-b last:border-b-0 border-gray-200 w-full "
-              >
-                <td className="w-2/4 py-4 pl-5">{result.name}</td>
-                <td className="text-gray-400 w-2/4 py-4 pl-5">{result.score}</td>
+              <tr key={index} className=" w-full text-sm ">
+                <td className="w-2/4 py-4 pl-5 border-t">{result.name}</td>
+                <td className="text-gray-500 w-2/4 py-4 pl-5 border-t">{result.score}</td>
               </tr>
             )
           })}
